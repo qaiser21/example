@@ -1,0 +1,16 @@
+<h2> {{text}} </h2>
+<form action= "{{ url_for('threshold') }}" method="POST">
+
+     <select name= 'tvalue'>
+      {% for tvalue in tvalues %}
+        {% if selected_tvalue == tvalue %}
+            <option value="{{ tvalue }}" selected='selected'>{{ tvalue }}</option>
+        {% else %}
+             <option value="{{ tvalue }}" >{{ tvalue }}</option>
+        {% endif %}
+      {% endfor %}
+
+      </select>
+
+     <input type="submit" value="Submit" />
+</form>
